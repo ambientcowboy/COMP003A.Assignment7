@@ -26,7 +26,7 @@ class Program
        bool isRunning = true;
        while (isRunning)
        {
-           Console.Write();
+           Console.WriteLine();
            Console.WriteLine("1. Display All Values");
            Console.WriteLine("2. Show Total");
            Console.WriteLine("3. Show Average");
@@ -66,6 +66,24 @@ class Program
                    double average = total / expenses.Count;
                    Console.WriteLine();
                    Console.WriteLine("Average: $" + average.ToString("F2"));
+               }
+               else if (menuChoice == 4)
+               {
+                   Console.WriteLine();
+                   Console.WriteLine("Program Ended");
+                   isRunning = false;
+               }
+               else
+               {
+                   Console.WriteLine();
+                   Console.WriteLine("Invalid Input");
+               }
+           }
+           else
+           {
+               {
+                   Console.WriteLine();
+                   Console.WriteLine("Invalid Input. Please input a valid number from 1 to 4.");
                }
            }
        }
