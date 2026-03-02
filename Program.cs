@@ -23,5 +23,51 @@ class Program
                expenses.Add(0);
            }
        }
+       bool isRunning = true;
+       while (isRunning)
+       {
+           Console.Write();
+           Console.WriteLine("1. Display All Values");
+           Console.WriteLine("2. Show Total");
+           Console.WriteLine("3. Show Average");
+           Console.WriteLine("4. Exit");
+           Console.WriteLine("Enter Choice: ");
+           string menuInput = Console.ReadLine();
+           int menuChoice = 0;
+           if (int.TryParse(menuInput, out menuChoice))
+           {
+               if (menuChoice == 1)
+               {
+                   Console.WriteLine();
+                   Console.WriteLine("Enter Values: ");
+
+                   for (int i = 0; i < expenses.Count; i++)
+                   {
+                       Console.WriteLine((i + 1) + ". $" + expenses[i].ToString("F2"));
+                   }
+               }
+               else if (menuChoice == 2)
+               {
+                   double total = 0;
+                   for (int i = 0; i < expenses.Count; i++)
+                   {
+                       total += expenses[i];
+                   }
+                   Console.WriteLine();
+                   Console.WriteLine("Total: $" + total.ToString("F2"));
+               }
+               else if (menuChoice == 3)
+               {
+                   double total = 0;
+                   for (int i = 0; i < expenses.Count; i++)
+                   {
+                       total += expenses[i];
+                   }
+                   double average = total / expenses.Count;
+                   Console.WriteLine();
+                   Console.WriteLine("Average: $" + average.ToString("F2"));
+               }
+           }
+       }
     }
 }
